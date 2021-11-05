@@ -53,6 +53,13 @@
     font-weight:bold;
 }
 
+.bill span {
+    color:red;
+    font-weight: normal;
+    margin-left:155px;
+    display: none;
+}
+
 .percent input{
     margin: 10px;
     height: 40px;
@@ -64,12 +71,21 @@
     font-size:16px;   
     text-align: center;
 }
+.percent input:hover,
+.percent input:focus {
+    background-color: var(--Light-grayish-cyan);
+    color:var(--dark-cyan);
+    cursor: pointer;
+}
 .percent input[type="number"]{
     background-color: var(--Light-grayishcyan2);
     color: var(--dark-cyan);
     outline: none;
     font-size:18px;   
-
+}
+.percent input[type="number"]:hover,
+.percent input[type="number"]:focus{
+    border: 1px solid var(--primary-color);
 }
 .percent input[type="number"]::-webkit-outer-spin-button,
 .percent input[type="number"]::-webkit-inner-spin-button{
@@ -89,6 +105,12 @@
     border-radius:5px;
     outline: none;
 }
+.pNumber span {
+    color:red;
+    font-weight: normal;
+    margin-left:50px;
+    display: none;
+}
 .bill i ,
 .pNumber i{
     position: absolut;
@@ -100,9 +122,14 @@
     color:var(--dark-grayish-cyan);
     text-align: center;
 }
-.bill input:focus{
+.bill input:hover ,
+.bill input:focus ,
+.pNumber input:hover,
+.pNumber input:focus  {
     border: 1px solid var(--primary-color);
 }
+
+
 .bill input::-webkit-outer-spin-button,
 .bill input::-webkit-inner-spin-button,
 .pNumber input::-webkit-outer-spin-button,
