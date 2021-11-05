@@ -30,9 +30,11 @@ window.addEventListener('load', function () {
 }); //end of olad
 
 function calctotal(data) {
-    if (pnumber.value == 0) {
+    if (pnumber.value == 0 ) {
         pnumber.style.border = "1px solid red";
         errmsg.style.display = "inline";
+        amount.style.border = "1px solid red";
+        billerrmsg.style.display = "inline";   
     } else {
         tip = ((amount.value * (`${(data.target.value)/100}`)) / pnumber.value).toFixed(2);
         amountresult.innerText = `$${tip}`;
@@ -40,14 +42,20 @@ function calctotal(data) {
         totalresult.innerText = `$${total}`;
         pnumber.style.border = "none";
         errmsg.style.display = "none";
+        amount.style.border = "none";
+        billerrmsg.style.display = "none";
         custome.value="";
     }
 }
 
 function calcCustome(data){
-    if (pnumber.value == 0) {
+    if (pnumber.value == 0 ) {
         pnumber.style.border = "1px solid red";
         errmsg.style.display = "inline";
+        pnumber.focus();
+        amount.style.border = "1px solid red";
+        billerrmsg.style.display = "inline";
+        
     } else {
         tip = ((amount.value * (`${(data.target.value)/100}`)) / pnumber.value).toFixed(2);
         amountresult.innerText = `$${tip}`;
@@ -55,5 +63,7 @@ function calcCustome(data){
         totalresult.innerText = `$${total}`;
         pnumber.style.border = "none";
         errmsg.style.display = "none";
+        amount.style.border = "none";
+        billerrmsg.style.display = "none";
     }
 }
