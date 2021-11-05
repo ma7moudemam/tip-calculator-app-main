@@ -13,7 +13,8 @@ window.addEventListener('load', function () {
     for (var i = 0; i < percent.length; i++) {
         percent[i].addEventListener('click', calctotal);
     }
-    
+    custome.addEventListener('input', calcCustome);
+
     resetbtn.addEventListener("click", function () {
 
         pnumber.style.border = "none";
@@ -39,6 +40,20 @@ function calctotal(data) {
         totalresult.innerText = `$${total}`;
         pnumber.style.border = "none";
         errmsg.style.display = "none";
+        custome.value="";
     }
+}
 
+function calcCustome(data){
+    if (pnumber.value == 0) {
+        pnumber.style.border = "1px solid red";
+        errmsg.style.display = "inline";
+    } else {
+        tip = ((amount.value * (`${(data.target.value)/100}`)) / pnumber.value).toFixed(2);
+        amountresult.innerText = `$${tip}`;
+        total = ((amount.value / pnumber.value) + parseInt(tip)).toFixed(2);
+        totalresult.innerText = `$${total}`;
+        pnumber.style.border = "none";
+        errmsg.style.display = "none";
+    }
 }
